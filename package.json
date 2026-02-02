@@ -11,5 +11,6 @@
     "app/cap_btp_job_account",
     "app/cap_btp_job_transaction",
     "app/cap_btp_job_report"
-  ]
+  ],
+  "dependencies": {}
 }
