@@ -6,7 +6,7 @@ entity Account : cuid {
     name : String(12);
 
     @Measures.ISOCurrency : currency_code
-    balance : Decimal(9, 2);
+    balance : Decimal(14, 2);
     
     currency : Currency;
 }
@@ -15,7 +15,7 @@ entity Transaction : cuid {
     timestamp : Timestamp;
 
     @Measures.ISOCurrency : currency_code
-    amount : Decimal(9, 2);
+    amount : Decimal(14, 2);
     
     currency : Currency;
 
@@ -28,7 +28,7 @@ entity Report : cuid{
     timestamp : Timestamp;
 
     @Measures.ISOCurrency : currency_code
-    totalmoved: Decimal(9, 2);
+    totalmoved: Decimal(14, 2);
     
     currency : Currency;
 }
