@@ -11,7 +11,7 @@
             "name": "Spring Boot-Application<cap_btp_job>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.sap.capire.cap_btp_job.Application",
+            "mainClass": "customer.cap_btp_job.Application",
             "projectName": "cap_btp_job",
             "preLaunchTask": "cds_bind"
         },
