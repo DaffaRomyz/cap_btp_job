@@ -15,7 +15,7 @@ entity Transaction : cuid {
     timestamp : Timestamp;
 
     @Measures.ISOCurrency : currency_code
-    ammount : Decimal(9, 2);
+    amount : Decimal(9, 2);
     
     currency : Currency;
 

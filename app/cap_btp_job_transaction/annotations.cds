@@ -3,18 +3,18 @@ annotate service.Transaction with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Value : ammount,
-            Label : 'ammount',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : receiver_ID,
-            Label : 'receiver_ID',
+            Value : amount,
+            Label : 'amount',
         },
         {
             $Type : 'UI.DataField',
             Value : sender_ID,
             Label : 'sender_ID',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : receiver_ID,
+            Label : 'receiver_ID',
         },
         {
             $Type : 'UI.DataField',
@@ -41,8 +41,8 @@ annotate service.Transaction with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Value : ammount,
-                Label : 'ammount',
+                Value : amount,
+                Label : 'amount',
             },
             {
                 $Type : 'UI.DataField',
@@ -56,23 +56,53 @@ annotate service.Transaction with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Value : receiver_ID,
-                Label : 'receiver_ID',
+                Value : sender_ID,
+                Label : 'sender_ID',
             },
             {
                 $Type : 'UI.DataField',
-                Value : sender_ID,
-                Label : 'sender_ID',
+                Value : receiver_ID,
+                Label : 'receiver_ID',
             },
         ],
     },
 );
 
 annotate service.Transaction with {
-    receiver @Common.ExternalID : receiver.name
+    sender @(
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Account',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : sender_ID,
+                    ValueListProperty : 'ID',
+                },
+            ],
+            Label : 'Sender Account',
+        },
+        Common.ValueListWithFixedValues : false,
+        Common.ExternalID : sender.name,
+    )
 };
 
 annotate service.Transaction with {
-    sender @Common.ExternalID : sender.name
+    receiver @(
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Account',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : receiver_ID,
+                    ValueListProperty : 'ID',
+                },
+            ],
+            Label : 'Receiver Account',
+        },
+        Common.ValueListWithFixedValues : false,
+        Common.ExternalID : receiver.name,
+    )
 };
 
