@@ -10,6 +10,6 @@ service MainService {
 
     entity Report as projection on model.Report;
 
-    action updateAccountBalance() returns Account;
-    action generateReport() returns Report;
+    action updateAccountBalance();
+    action generateReport();
 }
