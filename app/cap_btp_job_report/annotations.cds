@@ -11,6 +11,11 @@ annotate service.Report with @(
             Value : timestamp,
             Label : 'timestamp',
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'MainService.EntityContainer/generateReport',
+            Label : 'generateReport',
+        },
     ],
     UI.Facets : [
         {

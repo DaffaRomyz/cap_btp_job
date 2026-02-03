@@ -11,6 +11,11 @@ annotate service.Account with @(
             Value : balance,
             Label : 'balance',
         },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'MainService.EntityContainer/updateAccountBalance',
+            Label : 'updateAccountBalance',
+        },
     ],
     UI.Facets : [
         {
