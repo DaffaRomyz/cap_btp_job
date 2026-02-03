@@ -10,6 +10,15 @@ service MainService {
 
     entity Report as projection on model.Report;
 
+    @Common.SideEffects : {
+        $Type : 'Common.SideEffectsType',
+        TargetEntities : ['/MainService.EntityContainer/Account'],
+    }
     action updateAccountBalance();
+
+    @Common.SideEffects : {
+        $Type : 'Common.SideEffectsType',
+        TargetEntities : ['/MainService.EntityContainer/Report'],
+    }
     action generateReport();
 }
