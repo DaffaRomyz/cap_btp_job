@@ -1,7 +1,6 @@
 package customer.cap_btp_job.handlers;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,17 +11,13 @@ import com.sap.cds.ql.Select;
 import com.sap.cds.ql.Update;
 import com.sap.cds.ql.cqn.CqnSelect;
 import com.sap.cds.ql.cqn.CqnUpdate;
-import com.sap.cds.services.EventContext;
-import com.sap.cds.services.ServiceException;
 import com.sap.cds.services.handler.EventHandler;
-import com.sap.cds.services.handler.annotations.Before;
 import com.sap.cds.services.handler.annotations.On;
 import com.sap.cds.services.handler.annotations.ServiceName;
 import com.sap.cds.services.persistence.PersistenceService;
 
 import cds.gen.mainservice.Account;
 import cds.gen.mainservice.Account_;
-import cds.gen.mainservice.Currencies;
 import cds.gen.mainservice.MainService_;
 import cds.gen.mainservice.Transaction;
 import cds.gen.mainservice.Transaction_;
