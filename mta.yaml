@@ -167,7 +167,7 @@ resources:
       xsappname: cap_btp_job-${org}-${space}
     path: ./xs-security.json
     service: xsuaa
-    service-plan: application
+    service-plan: broker
   requires:
   - name: app-api
 - name: cap_btp_job-db
