@@ -91,18 +91,6 @@ modules:
       - cap_btp_job_transaction.zip
       name: cap_btp_jobcap_btp_job_transaction
       target-path: resources
-    - artifacts:
-      - capbtpjobaccount.zip
-      name: capbtpjobaccount
-      target-path: resources/
-    - artifacts:
-      - capbtpjobreport.zip
-      name: capbtpjobreport
-      target-path: resources/
-    - artifacts:
-      - capbtpjobtransaction.zip
-      name: capbtpjobtransaction
-      target-path: resources/
 - name: cap_btp_jobcap_btp_job_account
   type: html5
   path: app/cap_btp_job_account
@@ -164,36 +152,6 @@ modules:
         existing_destinations_policy: update
   build-parameters:
     no-source: true
-- name: capbtpjobaccount
-  type: html5
-  path: app/cap_btp_job_account
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: capbtpjobreport
-  type: html5
-  path: app/cap_btp_job_report
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-- name: capbtpjobtransaction
-  type: html5
-  path: app/cap_btp_job_transaction
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 resources:
 - name: cap_btp_job-auth
   type: org.cloudfoundry.managed-service
