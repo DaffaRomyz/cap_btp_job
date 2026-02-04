@@ -40,6 +40,8 @@ modules:
 - name: cap_btp_job
   type: approuter.nodejs
   path: app/router
+  properties:
+    SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
   requires:
   - name: srv-api
     group: destinations

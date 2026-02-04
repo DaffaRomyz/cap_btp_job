@@ -1,5 +1,13 @@
 {
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.JOBSCHEDULER",
+      "description": "Job Scheduler Scope",
+      "grant-as-authority-to-apps": [
+        "$XSSERVICENAME(btpjob)"
+      ]
+    }
+  ],
   "attributes": [],
   "role-templates": [],
   "xsappname": "cap_btp_job",
