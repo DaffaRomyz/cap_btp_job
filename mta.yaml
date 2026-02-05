@@ -41,7 +41,7 @@ modules:
   type: approuter.nodejs
   path: app/router
   properties:
-    SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+    # SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
   requires:
   - name: srv-api
     group: destinations
@@ -169,7 +169,8 @@ resources:
       xsappname: cap_btp_job-${org}-${space}
     path: ./xs-security.json
     service: xsuaa
-    service-plan: broker
+    service-plan: application
+    # service-plan: broker
   requires:
   - name: app-api
 - name: cap_btp_job-db
