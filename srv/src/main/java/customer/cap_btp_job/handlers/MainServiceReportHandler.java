@@ -36,7 +36,7 @@ public class MainServiceReportHandler implements EventHandler{
     void onGenerateReport(GenerateReportContext context) {
         
         Instant endInstant = Instant.now();
-        Instant startIntant = endInstant.minusSeconds(900);
+        Instant startInstant = endInstant.minusSeconds(3600);
 
         Report report = Report.create();
 
@@ -45,7 +45,7 @@ public class MainServiceReportHandler implements EventHandler{
 
         Double amount = 0d;
 
-        CqnSelect select = Select.from(Transaction_.CDS_NAME).where(w -> w.get(Transaction.TIMESTAMP).between(startIntant, endInstant));
+        CqnSelect select = Select.from(Transaction_.CDS_NAME).where(w -> w.get(Transaction.TIMESTAMP).between(startInstant, endInstant));
 
         List<Transaction> transactionList = db.run(select).listOf(Transaction.class);
 

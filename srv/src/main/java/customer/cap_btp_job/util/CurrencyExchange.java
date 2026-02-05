@@ -1,6 +1,5 @@
 package customer.cap_btp_job.util;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyExchange {
